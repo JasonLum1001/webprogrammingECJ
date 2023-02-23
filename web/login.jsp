@@ -26,7 +26,7 @@
 		<div id="login" class="login-model tab">
 			<h1 class="title">Sign In</h1>
 
-			<form method="post" action="signInUp">
+			<form method="post" action="login">
 			    <div class="input_container">
 
                         <div class="container">
@@ -50,7 +50,7 @@
 
         <div id="register" class="register-model tab">
 
-            <form method="post" action="signInUp">
+            <form method="post" action="login">
 
                 <h1 class="title">Sign Up</h1>
 

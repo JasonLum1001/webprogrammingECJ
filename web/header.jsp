@@ -32,7 +32,7 @@
 
             <!--Sign in Button-->
             <div class="sign_btn">
-                <a href="./login.php">
+                <a href="./login.jsp">
                     <i class='fas fa-user-circle'></i>
                 </a>
             </div>
