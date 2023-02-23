@@ -41,7 +41,7 @@
 						
 						<br>
 						
-						<a href="./movie_info.php" target="_blank">
+						<a href="./movie_info.jsp" target="_blank">
 						<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 						</a>
 						
@@ -51,7 +51,7 @@
 						
 						<br>
 						
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button class="buy_btn"><b>Buy Ticket Now</b></button>
 						</a>
 						
@@ -68,7 +68,7 @@
 						<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 						<br>
 						
-						<a href="./movie_info.php" target="_blank">
+						<a href="./movie_info.jsp" target="_blank">
 						<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 						</a>
 						
@@ -78,7 +78,7 @@
 						
 						<br>
 						
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button class="buy_btn"><b>Buy Ticket Now</b></button>
 						</a>
 						
@@ -95,7 +95,7 @@
 						<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 						<br>
 						
-						<a href="./movie_info.php" target="_blank">
+						<a href="./movie_info.jsp" target="_blank">
 						<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 						</a>
 						
@@ -105,7 +105,7 @@
 						
 						<br>
 						
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button class="buy_btn"><b>Buy Ticket Now</b></button>
 						</a>
 						
@@ -129,7 +129,7 @@
 						
 						<br>
 						
-						<a href="./movie_info.php" target="_blank">
+						<a href="./movie_info.jsp" target="_blank">
 						<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 						</a>
 						
@@ -139,7 +139,7 @@
 						
 						<br>
 						
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button class="buy_btn"><b>Buy Ticket Now</b></button>
 						</a>
 						
@@ -156,7 +156,7 @@
 						<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 						<br>
 						
-						<a href="./movie_info.php" target="_blank">
+						<a href="./movie_info.jsp" target="_blank">
 						<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 						</a>
 						
@@ -166,7 +166,7 @@
 						
 						<br>
 						
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button class="buy_btn"><b>Buy Ticket Now</b></button>
 						</a>
 						
@@ -183,7 +183,7 @@
 						<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 						<br>
 						
-						<a href="./movie_info.php" target="_blank">
+						<a href="./movie_info.jsp" target="_blank">
 						<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 						</a>
 						
@@ -193,7 +193,7 @@
 						
 						<br>
 						
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button class="buy_btn"><b>Buy Ticket Now</b></button>
 						</a>
 						
@@ -217,7 +217,7 @@
 						
 						<br>
 						
-						<a href="./movie_info.php" target="_blank">
+						<a href="./movie_info.jsp" target="_blank">
 						<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 						</a>
 						
@@ -227,7 +227,7 @@
 						
 						<br>
 						
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button class="buy_btn"><b>Buy Ticket Now</b></button>
 						</a>
 						
@@ -244,7 +244,7 @@
 						<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 						<br>
 						
-						<a href="./movie_info.php" target="_blank">
+						<a href="./movie_info.jsp" target="_blank">
 						<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 						</a>
 						
@@ -254,7 +254,7 @@
 						
 						<br>
 						
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button class="buy_btn"><b>Buy Ticket Now</b></button>
 						</a>
 						
@@ -271,7 +271,7 @@
 						<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 						<br>
 						
-						<a href="./movie_info.php" target="_blank">
+						<a href="./movie_info.jsp" target="_blank">
 						<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 						</a>
 						
@@ -281,7 +281,7 @@
 						
 						<br>
 						
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button class="buy_btn"><b>Buy Ticket Now</b></button>
 						</a>
 						

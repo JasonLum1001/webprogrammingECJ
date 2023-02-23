@@ -78,7 +78,7 @@
 					</button>
 				</a>
 				
-				<a href="./booking.php" target="_blank">
+				<a href="./booking.jsp" target="_blank">
 					<button class="buy_btn"><b>Buy Ticket Now</b></button>
 				</a>
 			</div>

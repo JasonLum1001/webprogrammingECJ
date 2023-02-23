@@ -108,7 +108,7 @@
 
 					<tr>
 						<th colspan="3">
-							<a href="./login.php">
+							<a href="./login.jsp">
 								<button class="signupBtn">Sign Up Now!  >></button>
 							</a>
 						</th>
@@ -121,7 +121,7 @@
 				<ol>
 					<li>
 						<span>A Guilty Conscience</span>
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
@@ -130,7 +130,7 @@
 					
 					<li>
 						<span>Coast Guard Malaysia: Ops Helang</span>
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
@@ -139,7 +139,7 @@
 					
 					<li>
 						<span>3D Titanic</span>
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
@@ -148,7 +148,7 @@
 					
 					<li>
 						<span>Harum Malam</span>
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
@@ -157,7 +157,7 @@
 					
 					<li>
 						<span>The King of Musang King</span>
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
@@ -166,7 +166,7 @@
 					
 					<li>
 						<span>Someday Or One Day</span>
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
@@ -175,7 +175,7 @@
 					
 					<li>
 						<span>Ma, I Love You</span>
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
@@ -184,7 +184,7 @@
 					
 					<li>
 						<span>The Wandering Earth 2</span>
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
@@ -193,7 +193,7 @@
 					
 					<li>
 						<span>Avatar: The Way Of Water</span>
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
@@ -202,7 +202,7 @@
 					
 					<li>
 						<span>Pathaan</span>
-						<a href="./booking.php" target="_blank">
+						<a href="./booking.jsp" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
@@ -237,7 +237,7 @@
 
 								<br>
 
-								<a href="./movie_info.php" target="_blank">
+								<a href="./movie_info.jsp" target="_blank">
 								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 								</a>
 
@@ -247,7 +247,7 @@
 
 								<br>
 
-								<a href="./booking.php" target="_blank">
+								<a href="./booking.jsp" target="_blank">
 									<button class="buy_btn"><b>Buy Ticket Now</b></button>
 								</a>
 
@@ -264,7 +264,7 @@
 								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 								<br>
 
-								<a href="./movie_info.php" target="_blank">
+								<a href="./movie_info.jsp" target="_blank">
 								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 								</a>
 
@@ -274,7 +274,7 @@
 
 								<br>
 
-								<a href="./booking.php" target="_blank">
+								<a href="./booking.jsp" target="_blank">
 									<button class="buy_btn"><b>Buy Ticket Now</b></button>
 								</a>
 
@@ -291,7 +291,7 @@
 								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 								<br>
 
-								<a href="./movie_info.php" target="_blank">
+								<a href="./movie_info.jsp" target="_blank">
 								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 								</a>
 
@@ -301,7 +301,7 @@
 
 								<br>
 
-								<a href="./booking.php" target="_blank">
+								<a href="./booking.jsp" target="_blank">
 									<button class="buy_btn"><b>Buy Ticket Now</b></button>
 								</a>
 
@@ -325,7 +325,7 @@
 
 								<br>
 
-								<a href="./movie_info.php" target="_blank">
+								<a href="./movie_info.jsp" target="_blank">
 								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 								</a>
 
@@ -335,7 +335,7 @@
 
 								<br>
 
-								<a href="./booking.php" target="_blank">
+								<a href="./booking.jsp" target="_blank">
 									<button class="buy_btn"><b>Buy Ticket Now</b></button>
 								</a>
 
@@ -352,7 +352,7 @@
 								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 								<br>
 
-								<a href="./movie_info.php" target="_blank">
+								<a href="./movie_info.jsp" target="_blank">
 								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 								</a>
 
@@ -362,7 +362,7 @@
 
 								<br>
 
-								<a href="./booking.php" target="_blank">
+								<a href="./booking.jsp" target="_blank">
 									<button class="buy_btn"><b>Buy Ticket Now</b></button>
 								</a>
 
@@ -379,7 +379,7 @@
 								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 								<br>
 
-								<a href="./movie_info.php" target="_blank">
+								<a href="./movie_info.jsp" target="_blank">
 								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 								</a>
 
@@ -389,7 +389,7 @@
 
 								<br>
 
-								<a href="./booking.php" target="_blank">
+								<a href="./booking.jsp" target="_blank">
 									<button class="buy_btn"><b>Buy Ticket Now</b></button>
 								</a>
 
@@ -413,7 +413,7 @@
 
 								<br>
 
-								<a href="./movie_info.php" target="_blank">
+								<a href="./movie_info.jsp" target="_blank">
 								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 								</a>
 
@@ -423,7 +423,7 @@
 
 								<br>
 
-								<a href="./booking.php" target="_blank">
+								<a href="./booking.jsp" target="_blank">
 									<button class="buy_btn"><b>Buy Ticket Now</b></button>
 								</a>
 
@@ -440,7 +440,7 @@
 								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 								<br>
 
-								<a href="./movie_info.php" target="_blank">
+								<a href="./movie_info.jsp" target="_blank">
 								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 								</a>
 
@@ -450,7 +450,7 @@
 
 								<br>
 
-								<a href="./booking.php" target="_blank">
+								<a href="./booking.jsp" target="_blank">
 									<button class="buy_btn"><b>Buy Ticket Now</b></button>
 								</a>
 
@@ -467,7 +467,7 @@
 								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
 								<br>
 
-								<a href="./movie_info.php" target="_blank">
+								<a href="./movie_info.jsp" target="_blank">
 								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
 								</a>
 
@@ -477,7 +477,7 @@
 
 								<br>
 
-								<a href="./booking.php" target="_blank">
+								<a href="./booking.jsp" target="_blank">
 									<button class="buy_btn"><b>Buy Ticket Now</b></button>
 								</a>
 

@@ -24,7 +24,7 @@
 			<!-- Cinema 1-->
 			<div class="map_container">
 				<h3 class="location_name">Cinema.com One Utama</h3>
-				<a class="location_img" href="./location_info.php" target="_blank" title="One Utama: Click to view more info">
+				<a class="location_img" href="./location_info.jsp" target="_blank" title="One Utama: Click to view more info">
 					<img src="./Images/Location/location1.jpg" alt="Cinema.com One Utama">
 				</a>
 
@@ -33,7 +33,7 @@
 				47800 Petaling Jaya,
 				Selangor, Malaysia.</p>
 
-				<a href="./location_info.php" target="_blank">
+				<a href="./location_info.jsp" target="_blank">
 					<button class="locationinfo"title="More Info">More Info</button>
 					<button class="map"title="View Map">View Map</button>
 				</a>
@@ -42,7 +42,7 @@
 			<!-- Cinema 2-->
 			<div class="map_container">
 				<h3 class="location_name">Cinema.com Suria KLCC</h3>
-				<a class="location_img" href="./location_info.php" target="_blank" title="Suria KLCC: Click to view more info">
+				<a class="location_img" href="./location_info.jsp" target="_blank" title="Suria KLCC: Click to view more info">
 					<img src="./Images/Location/location2.jpg" alt="Cinema.com Suria KLCC">
 				</a>
 
@@ -51,7 +51,7 @@
 				50088 Kuala Lumpur,
 				Wilayah Persekutuan, Malaysia.</p>
 
-				<a href="./location_info.php" target="_blank">
+				<a href="./location_info.jsp" target="_blank">
 					<button class="locationinfo"title="More Info">More Info</button>
 					<button class="map"title="View Map">View Map</button>
 				</a>
@@ -61,7 +61,7 @@
 			<!-- Cinema 3-->
 			<div class="map_container">
 				<h3 class="location_name">Coming Soon Cinema</h3>
-				<a class="location_img" href="./location_info.php" target="_blank" title="Coming Soon Cinema">
+				<a class="location_img" href="./location_info.jsp" target="_blank" title="Coming Soon Cinema">
 					<img src="./Images/Location/location3.jpg" alt="Coming Soon Cinema">
 				</a>
 

@@ -84,7 +84,7 @@
 					
 					<tr>
 						<th colspan="3">
-							<a href="./login.php">
+							<a href="./login.jsp">
 								<button class="signupBtn">Sign Up Now!  >></button>
 							</a>
 						</th>
