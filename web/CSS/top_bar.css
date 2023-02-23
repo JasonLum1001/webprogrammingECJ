@@ -1,0 +1,150 @@
+body{
+	margin: 0;
+	background-image:url(../Images/background.jpg);
+	font-family: 'Dosis', sans-serif;
+}
+
+/*Header*/
+.header{
+	white-space: nowrap;
+	padding-bottom: 3.5vw;
+	background-color: black;
+}
+
+.body{
+	/*background-image:url(../Images/background.jpg);
+	background-position: center;
+	background-repeat: no-repeat;*/
+	background-size: 30vw 20vw;	
+	margin:0px;
+}
+
+.body .title{
+	color: white; 
+	font-size: 3vw; 
+	font-family: 'Josefin Sans', sans-serif;
+	padding: 1vw 2vw;
+	margin: 0px; 
+	text-shadow: 0.75vw 0.75vw 10px black;
+}
+
+.body h1, .body h2, .body h3, .body h4, .body h5, .body h6, .body summary{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.body button{
+	font-family: 'Dosis', sans-serif;
+}
+
+/* Logo */
+.logo{
+	position: absolute;
+	left: 0;
+	font-family: fantasy;
+	margin-top: 0.75vh;
+	margin-bottom: 0.75vh;
+	margin-left: 0.5vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: -webkit-linear-gradient(#FFFF00, #F5B003);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.logo img, .logo h1{
+	padding: 0.25vw;
+	margin : 0;
+}
+
+.logo img{
+	/* width: 2.5vw; */
+	height: 2.5vw;
+}
+
+.logo h1{
+	font-size: 2vw;
+	text-decoration-line: overline underline;
+	text-decoration-color: #E0E0E0;
+	text-decoration-style: dotted;
+}
+
+/* Sign In Button */
+.sign_btn {
+	position: absolute;
+	right: 0;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	margin-right: 0.5vw;
+	border-radius: 50%;
+}
+
+.sign_btn a i{
+	color: white;
+	font-size: 2.75vw;
+}
+
+.sign_btn a i:hover {
+    color: yellow;
+}
+
+.sign_btn a img{
+	width: 2.75vw;
+	height: 2.75vw;
+	border-radius: 50%;
+}
+
+/* Menu Bar */
+.menu_bar {
+    overflow: hidden;
+    background-image: url(../Images/film_background.jpg);
+    background-repeat: repeat-x;
+    background-size: 11% 100%;
+}
+
+.topbar a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 1vw 1.2vw;
+    text-decoration: none;
+    font-size: 1.3vw;
+	border-bottom: 0.25vw solid transparent;
+	color: white;
+	margin-top: 0.1vw;
+	font-size: 1.5vw; 
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.topbar a:hover{
+    border-bottom: 0.25vw solid yellow;
+    color: yellow;
+}
+
+.topbar a:active{
+    border-bottom: 0.25vw solid red;
+    color: red;
+}
+
+/*Book Now*/
+.book_ {
+    float: right;
+    margin: 1vw;
+    font-size: 1.3vw;
+	width: 12vw;
+    border-radius: 1vw;
+    background: linear-gradient(to bottom, #ffe659 0%, #ff6600 100%);
+    color: black;
+    cursor: pointer;
+	box-shadow: 0 0.2vw #666;
+}
+
+.book_:hover {
+    background: linear-gradient(to bottom, #FFA200 0%, #FF0000 100%);
+    color: yellow;
+}
+
+.book_:active {
+	box-shadow: 0 0.05vw #666;
+    transform: translateY(0.2vw);
+}

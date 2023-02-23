@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+
+hr{
+	width: 100%;
+	border: 0.01vw outset white;
+	margin: 0.75vw 0;
+}
+
+.cart_list{
+	width: 25vw;
+	background-color: #626262;
+	color: white;
+	float: right;
+	padding: 1vw;
+}
+
+.cart_header{
+	font-size: 1.5vw;
+	display: table;
+    margin: 0.5vw auto;
+	font-weight: 900;
+}
+
+.item{
+	display: flex;
+}
+
+.item_info{
+	width: 70%;
+	margin: 0.5vw 0.25vw 0.5vw 0;
+}
+
+.item_info p{
+	margin: 0;
+}
+
+.item_name{
+	font-weight: 300;
+	font-size: 1.3vw;
+}
+
+.item_descr{
+	font-weight: 100;
+	font-size: 1vw;
+}
+
+.item_info2{
+	width: 29%;
+	margin: 0.5vw 0.25vw;
+	text-align: right;
+}
+
+.item_cost{
+	font-size: 1.2vw;
+	font-weight: lighter;
+}
+
+.total_item{
+	margin-top: 1vw;
+	text-align: center;
+}
+
+.total_item span{
+	font-size: 1.2vw;
+}
+
+.total_item button{
+	border: none;
+	color: white;
+	background-color: transparent;
+	font-size: 1vw;
+	padding: 0.1vw 0.75vw;
+}
+
+.total_item button:hover{
+	color: yellow;
+	cursor: pointer;
+}
+
+.total_item button:active{
+	color: red;
+}
+
+.total_cost table{
+	width: 100%;
+	font-size: 1.2vw;
+}
+
+.cost_def{
+	width: 50%;
+	margin: 0.5vw 0.25vw 0.5vw 0;
+}
+
+.cost_val{
+	text-align: right;
+	width: 50%;
+	margin: 0.5vw 0.25vw;
+}
+
+.final_cost{
+	font-weight: 900;
+}

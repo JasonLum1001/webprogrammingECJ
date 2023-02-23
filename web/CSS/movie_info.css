@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+
+.movie-info{
+	padding: 2vw;
+	display: flex;
+	color: white;
+	margin: auto;
+	width: 80vw;
+}
+
+.image{
+	margin: 1vw 3vw;
+}
+
+.image img{
+	width: 17.5vw;
+	height: 25vw;
+}
+
+.info{
+	
+}
+
+.movie_name{
+	font-size: 2vw;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.info table{
+	margin-bottom: 1.5vw;
+}
+
+.info table td{
+	padding: 0.25vw 5vw 0.25vw 0;
+	font-size: 1.2vw;
+}
+
+.info_header{
+	font-size: 1.5vw;
+}
+
+.info p{
+	font-size: 1.2vw;
+	margin: 0.25vw 0vw 0.75vw;
+}
+
+.info .trailer_btn{
+	font-size: 1.3vw;
+	color: white;
+	background-color: transparent;
+	border: none;
+	font-family: 'Dosis', sans-serif;
+}
+
+.info .trailer_btn i{
+	font-size: 1.5vw;
+}
+
+.info .trailer_btn:hover{
+	cursor: pointer;
+	color: yellow;
+}
+
+.info .trailer_btn:active{
+	cursor: pointer;
+	color: red;
+}
+
+.info .buy_btn{
+	margin-left: 1vw;
+	font-size: 1.3vw;
+	border-radius: 0.25vw;
+	background: linear-gradient(to bottom, #ffe659 0%, #ff6600 100%);
+	color: black;
+	border: none;
+	font-family: 'Dosis', sans-serif;
+}
+
+.info .buy_btn:hover{
+	background: linear-gradient(to bottom, #FFA200 0%, #FF0000 100%);
+	color: yellow;
+	cursor: pointer;
+}
+
+.slider{
+	background-color: #0000004a;
+	padding-bottom: 5vw;
+}
+
+.slider h1{
+	text-align: center;
+	font-size: 1.5vw;
+	font-weight: 900;
+	color: red;
+	padding: 2vw 0 1vw 0;
+	font-family: 'Josefin Sans', sans-serif;
+}

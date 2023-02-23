@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+
+.title{
+	color: white; 
+	font-size: 4vw; 
+	font-family: Brush Script MT, Arial; 
+	padding: 1vw 2vw;
+	margin: 0px; 
+	text-shadow: 0.75vw 0.75vw 10px black;
+}
+
+.map_containers{
+	margin: 0;  
+	font-size: 1.5vw; 
+	color: white;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.map_container{
+	width: 41%;
+	margin: 1vw 2%;
+	padding: 1vw 2%;
+	text-align: center;
+}
+
+.location_name{
+	font-size: 2.5vw;
+	margin: 0 0 1.5vw 0;
+	background: -webkit-linear-gradient(yellow, #FFFFCC);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.location_img img:hover {
+	-ms-transform: scale(1.1); 
+	-webkit-transform: scale(1.1); 
+	transform: scale(1.1); 
+}
+
+.location_img img{
+	width: 35vw; 
+	height: 20vw; 
+}
+
+.map_container p{
+	font-size: 1.5vw;
+	white-space: pre-line;
+}
+
+.locationinfo, .map {
+	font-family: Cambria, Arial, Helvetica, sans-serif;
+	background-color: transparent;
+	border: 0.05vw solid white;
+	color: white;
+	padding: 1.2vw 3vw;
+	text-align: center;
+	font-size: 1.25vw;
+	border-radius: 1vw;
+	font-family: 'Dosis', sans-serif;
+}
+
+.locationinfo:hover, .map:hover {
+	border: 0.05vw solid yellow;
+	color: yellow;
+	cursor: pointer;
+}
+			
+.locationinfo:active, .map:active {
+	border: 0.05vw solid red;
+	color: red;
+}

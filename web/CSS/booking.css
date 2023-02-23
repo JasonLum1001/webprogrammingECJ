@@ -1,0 +1,491 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Progress Bar */
+.progress_bar_container{
+	padding: 2vw;
+}
+
+.progress_bar{
+	width: 100%;
+	height: 1vw;
+	background-color: yellow;
+	border-radius: 1vw;
+}
+
+.progression{
+	width: 0%;
+	height: 1vw;
+	background-color: red;
+	border-radius: 1vw;
+}
+
+.body:has(#info_detail[open]) .progress_bar_container .progression{
+	width: 0%
+}
+
+.body:has(#seat_detail[open]) .progress_bar_container .progression{
+	width: 33.3%
+}
+
+.body:has(#paid_detail[open]) .progress_bar_container .progression{
+	width: 66.6%
+}
+
+.body:has(#success_detail[open]) .progress_bar_container .progression{
+	width: 100%
+}
+
+/* Purchase System */
+
+.purchase_system{
+	padding: 0.25vw 2vw 2vw;
+	font-size: 1.5vw;
+}
+
+.tab_header{
+	width: 92vw;
+	padding: 1.5vw 1vw;
+	text-align: left;
+	background-color: #454545;
+	border: none;
+	border-left: 0.25vw solid white;
+	font-size: 2.3vw;
+	font-weight: 600;
+	color: white;
+}
+
+.tab_header:hover{
+	border-left: 0.25vw solid yellow;
+	color: yellow;
+	background-color: #535353;
+}
+
+details[open] .tab_header{
+	border-left: 0.25vw solid red;
+	color: red;
+	background-color: #535353;
+}
+
+.tab_header::marker{
+	content: none;
+}
+
+.tab_header i{
+	font-weight: 200;
+	font-size: 2vw;
+}
+
+details[open] .tab_header i{
+	transform: rotate(45deg);
+	transition: transform 0.75s;
+}
+
+.tab_header span{
+	padding-left: 1vw;
+}
+
+details[open]{
+	background-color: #535353;
+}
+
+details{
+	padding-bottom: 1.5vw;
+	margin-bottom: 0.5vw;
+}
+
+/* Info Details */
+
+#info_detail .image_container{
+	text-align:center;
+	width: 30vw;
+	/*display: flex;*/
+	align-items: center;
+	justify-content: center;
+}
+
+#info_detail .image_container img{
+	width: 80%;
+}
+
+#info_detail form{
+	display: flex;
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	color: white;
+	font-size: 1.5vw;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#info_detail input{
+	outline: none;
+	background-color: transparent;
+	border: 0.25vw solid white;
+	color: white;
+	font-size: 1.75vw;
+	margin: 1vw 0;
+	padding: 0.5vw 1vw;
+	border-radius: 1vw;
+	color-scheme: dark;
+	font-family: 'Dosis', sans-serif;
+}
+
+#info_detail form #movie{
+	font-size: 4vw;
+	width: 60vw;
+	font-weight: bold;
+	border: none;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#info_detail form select{
+	outline: none;
+	background-color: transparent;
+	border: 0.25vw solid white;
+	color: white;
+	font-size: 1.75vw;
+	margin: 1vw 0;
+	padding: 0.5vw 1vw;
+	border-radius: 1vw;
+	font-family: 'Dosis', sans-serif;
+}
+
+#info_detail form option{
+	background-color: black;
+	font-family: 'Dosis', sans-serif;
+}
+
+#info_detail form button{
+	background-color: transparent;
+	color: white;
+	border: 0.25vw solid white;
+	border-radius: 2vw;
+	padding: 0.75vw 1.25vw;
+	font-size: 1vw;
+}
+
+#info_detail form button i{
+	padding-right: 0.75vw;
+}
+
+#info_detail form button:hover{
+	background-color: yellow;
+	color: red;
+	border: 0.25vw solid yellow;
+}
+
+#info_detail .submitBtn{
+	float: right;
+}
+
+#info_detail .submitBtn:hover{
+	background-color: yellow;
+	color: red;
+	border: 0.25vw solid yellow;
+}
+
+/* Seat */
+#seat_detail .info_div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 2vw;
+}
+
+#seat_detail .info_div > div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-flow: wrap;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	padding: 1vw 1vw 1vw 5vw;
+	border: 0.5vw solid white;
+	border-radius: 1vw;
+	width: 60%;
+}
+
+#seat_detail .info_div > div > div{
+	padding: 1vw 0.5vw;
+	width: 40%;
+	display: table;
+	table-layout: fixed;
+}
+
+#seat_detail .info_div > div > div > span, #seat_detail .info_div > div > div > label{
+	display: table-cell;
+	width: 5%;
+}
+
+#seat_detail .info_div > div > div:has(.info_label3){
+	width: 82%;
+	text-align: center;
+}
+
+#seat_detail .info_div .info_label1{
+	width: 18%;
+}
+
+#seat_detail .info_div .info_label2{
+	width: 25%;
+}
+
+#seat_detail .info_div .info_label3{
+	width: 17%;
+	text-align: left;
+}
+
+#seat_detail .info_div .info_detail1{
+	width: 75%;
+}
+
+#seat_detail .info_div .info_detail2{
+	width: 70%;
+}
+
+#seat_detail .info_div .info_detail3{
+	width: 99%;
+    text-align: start;
+	outline: none;
+	background-color: transparent;
+	border: none;
+	font-size: 1.3vw;
+	color: white;
+	font-weight: bold;
+}
+
+#seat_detail .submitBtn{
+	outline: none;
+	background-color: transparent;
+	border: 0.25vw solid white;
+	color: white;
+	font-size: 1.75vw;
+	margin: 1vw 2vw;
+	padding: 0.5vw 1vw;
+	border-radius: 1vw;
+	float: right;
+	font-family: 'Dosis', sans-serif;
+}
+
+#seat_detail .submitBtn:hover{
+	background-color: yellow;
+	color: red;
+	border: 0.25vw solid yellow;
+}
+
+#seat_detail .legend{
+	padding: 1vw;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	color: white;
+	font-size: 1.5vw;
+}
+
+#seat_detail .legend div{
+	margin: 0.5vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+#seat_detail .seats{
+	width: 2.3vw;
+    height: 2.3vw;
+	position: relative;
+    opacity: 0;
+    z-index: 2;
+    margin: 0;
+    margin-right: 1vw;
+}
+
+#seat_detail .preview_{
+	pointer-events: none;
+}
+
+#seat_detail .seats ~ .seatbox{
+	position: absolute;
+    display: inline-block;
+	top: 0;
+	left: 0;
+	height: 1.5vw;
+	width: 1.5vw;
+	background-color: white;
+	border: 0.4vw solid #9A9A9A;
+	border-bottom: 0.4vw solid white;
+}
+
+#seat_detail .seats:checked ~ .seatbox{
+	background-color: yellow;
+	border: 0.4vw solid #767600;
+	border-bottom: 0.4vw solid yellow;
+}
+
+#seat_detail #booked_seat ~ .seatbox{
+	background-color: red;
+	border: 0.4vw solid #890000;
+	border-bottom: 0.4vw solid red;
+}
+
+#seat_detail .seat_selection{
+	display: flow-root;
+}
+
+#seat_detail .seat_selection table{
+	margin: auto;
+	color: white;
+	font-size: 1.5vw;
+}
+
+#seat_detail .seat_selection table td{
+	position: relative;
+}
+
+#seat_detail .seat_row{
+	padding-right: 3vw;
+}
+
+#seat_detail .seatsN{
+	padding-bottom: 1.5vw;
+	padding-bottom: 1.5vw;
+	padding-left: 0.5vw;
+}
+
+#seat_detail .screen div{
+	border: 0.2vw solid black;
+	background-color: white;
+	color: black;
+	/* height: 1vw; */
+	text-align: center;
+	margin-right: 1vw;
+}
+
+/*Purchase*/
+#paid_detail{
+	color: white;
+	font-size: 1.5vw;
+}
+
+#paid_detail > div{
+	width: 65%;
+    margin: auto;
+	padding-bottom: 4vw;
+}
+
+#paid_detail > div > div{
+	display: flex;
+	justify-content: center;
+}
+
+#paid_detail .image_container{
+	text-align:center;
+	width: 25vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#paid_detail .image_container img{
+	width: 55%;
+}
+
+#paid_detail .info_container{
+	width: 30vw;
+}
+
+#paid_detail .info_container tr td{
+	width: 3%;
+}
+
+#paid_detail .info_container .space{
+	height: 4vw;
+}
+
+#paid_detail .info_container .info_label{
+	width: 1%;
+}
+
+#paid_detail .info_container .info_detail{
+	width: 15%;
+}
+
+#paid_detail .submitBtn{
+	outline: none;
+	background-color: transparent;
+	border: 0.25vw solid white;
+	color: white;
+	padding: 0.5vw 1vw;
+	border-radius: 1vw;
+	margin: 0.2vw -14.5vw;
+	float: right;
+	font-family: 'Dosis', sans-serif;
+	font-size: 1.75vw;
+}
+
+#paid_detail .submitBtn:hover{
+	background-color: yellow;
+	color: red;
+	border: 0.25vw solid yellow;
+}
+
+/*Payment Success*/
+#success_detail .receipt{
+	width: 50%;
+	margin: auto;
+}
+
+#success_detail .header_bar{
+	text-align: center;
+	margin-bottom: 0.25vw;
+	background-color: #cfcfcf;
+	padding: 0.25vw;
+}
+
+#success_detail .movieInfo_bar{
+	text-align: center;
+	margin-bottom: 0.25vw;
+	background-color: #cfcfcf;
+	padding: 0.25vw;
+}
+
+#success_detail .price_bar{
+	background-color: #cfcfcf;
+}
+
+#success_detail .price_bar > div{
+	display: flex;
+	align-items: flex-start;
+	padding: 0.5vw 1vw;
+}
+
+#success_detail .price_bar .item_container{
+	width: 25vw;
+}
+
+#success_detail .price_bar .item{
+	margin-bottom: 0.1vw;
+}
+
+#success_detail .price_bar .item_desr{
+	margin-top: 0.1vw;
+	margin-bottom: 0.25vw;
+}
+
+#success_detail .price_bar .price{
+	width: 100%;
+	text-align: end;
+}
+
+#success_detail .price_bar .total_price{
+	background-color: #322d2d;
+	color: white;
+	font-size: 1.5vw;
+	font-weight: bolder;
+}
+
+td:empty{
+	content: "\00a0"; 
+	width: 2.3vw;
+}

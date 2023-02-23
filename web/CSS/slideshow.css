@@ -1,0 +1,36 @@
+#slideshow {
+	text-align: center;
+	overflow: hidden;
+	height: 27vw;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.slide-wrapper {
+	width: 300vw;
+	-webkit-animation: slide 20s ease infinite;
+}
+
+.slide {
+	float: left;
+	height: 27vw;
+}
+
+.slide img{
+	width: 100vw;
+}
+
+.slide-number {
+	color: #000;
+	text-align: center;
+	font-size: 10em;
+}
+
+@-webkit-keyframes slide {
+	0% {margin-left: 0;}
+	16%{margin-left: 0;}
+	33% {margin-left: -100vw;}
+	49% {margin-left: -100vw;}
+	66% {margin-left: -200vw;}
+	82% {margin-left: -200vw;}
+}

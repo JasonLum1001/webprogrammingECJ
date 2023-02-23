@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+.title{
+	color: white; 
+	font-size: 4vw; 
+	font-family: Brush Script MT, Arial; 
+	padding: 1vw 2vw;
+	margin: 0px; 
+	text-shadow: 0.75vw 0.75vw 10px black;
+}
+
+.faq_container{
+	color: white;
+	padding:0 2vw 2vw;
+}
+
+.faq_container summary{
+	background-color: inherit;
+	cursor: pointer;
+	padding: 1vw 1.2vw;
+	transition: 0.3s;
+	font-size: 1.75vw;
+	color: white;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.faq_container summary:hover{
+	color: yellow;
+}
+
+.faq_container details[open] summary{
+	color: red;
+}
+
+.faq_container ol{
+	font-size: 1.25vw;
+}
+
+.faq_container dt{
+	margin-top: 2.5vw;
+}
+
+.faq_container dd{
+	margin: 1vw 0;
+}
+
+.faq_container a{
+	text-decoration: none; 
+	color: #CCE5FF;
+}
+

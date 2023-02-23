@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+.body{
+	overflow: hidden;
+}
+
+.menu_topbar{
+	display: flex;
+}
+
+.cart_btn{
+	font-size: 2.5vw;
+	color: white;
+	background-color: transparent;
+	border: none;
+}
+
+.cart_btn:hover{
+	color: yellow;
+}
+
+.title{
+	color: white; 
+	font-size: 4vw; 
+	font-family: Brush Script MT, Arial; 
+	padding: 1vw 2vw;
+	margin: 0px; 
+	text-shadow: 0.75vw 0.75vw 10px black;
+}
+
+.movie_tabs{
+	overflow: hidden;
+}
+
+.menu_tab {
+	background-color: transparent;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 1vw 1.2vw;
+	transition: 0.3s;
+	font-size: 1.5vw;
+	color: white;
+} 
+
+.menu_tab:hover {
+	color: yellow;
+	font-weight: 900;
+	border-bottom: 0.25vw solid yellow;
+}
+
+.menu_tab.active {
+	color: white;
+	font-weight: 900;
+	border-bottom: 0.25vw solid red;
+}
+
+.movie_{
+	transition: opacity 0.5s;
+	display: none;
+	padding: 0.5vw 1vw;
+}

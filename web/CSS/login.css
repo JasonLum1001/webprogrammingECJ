@@ -1,0 +1,275 @@
+@charset "utf-8";
+/* CSS Document */
+#login .title, #register .title{
+	color: white; 
+	font-size: 3vw; 
+	font-family: 'Josefin Sans', sans-serif;
+	padding: 5vw 2vw 1vw 2vw;
+	margin: 0px; 
+	text-shadow: 0.75vw 0.75vw 10px black;
+}
+
+
+.login_tab_label {
+	background-color: transparent;
+	display: block;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 1vw 1.2vw;
+	transition: 0.3s;
+	font-size: 1.5vw;
+	color: white;
+	float: right;
+}
+
+.login_tab_label:hover {
+	color: gray;
+}
+
+.login_tab {
+	display: none;
+}
+.login_tab ~ .tab {
+	display: none;
+}
+
+#Login:checked ~ .tab.login-model,
+#Register:checked ~ .tab.register-model {
+	display: block;
+}
+
+#Login:checked ~ #label2 {
+	display: none;
+}
+
+#Register:checked ~ #label3 {
+	display: none;
+}
+
+.tab{
+	width: 80%;
+	height: 100%;
+	padding: 4vw 0;
+	margin: 0 auto;
+}
+
+.input_container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+}
+
+.input_container > div{
+	width: 40%;
+}
+
+.input_container label, .input_container input{
+	background-color: transparent;
+	font-size: 1.5vw;
+	color: white;
+}
+
+.input_container label{
+	position: absolute;
+	margin: 1%;
+	padding: 1vw 0.78vw;
+}
+
+.input_container input{
+	position: relative;
+	width: 80%;
+	border: none;
+	border-bottom: 0.15vw solid white;
+	margin: 4%;
+	padding: 0.75vw 0.5vw;
+	z-index: 2;
+	outline: none;
+}
+
+.container:has(.email:focus) label{
+	font-size: 1.25vw;
+	top: 18vw;
+}
+
+.container:has(.email:not(:placeholder-shown)) label{
+	font-size: 1.25vw;
+	top: 18vw;
+}
+
+.container:has(.email:focus) .require{
+	display: none;
+}
+
+.container:has(.email:not(:placeholder-shown)) .require{
+	display: none;
+}
+
+.container:has(.email:focus) i{
+	display: none;
+}
+
+.container:has(.email:not(:placeholder-shown)) i{
+	display: none;
+}
+
+.container:has(.phone:focus) label{
+	font-size: 1.25vw;
+	top: 18vw;
+}
+
+.container:has(.phone:not(:placeholder-shown)) label{
+	font-size: 1.25vw;
+	top: 18vw;
+}
+
+.container:has(.phone:focus) .require{
+	display: none;
+}
+
+.container:has(.phone:not(:placeholder-shown)) .require{
+	display: none;
+}
+
+.container:has(.phone:focus) i{
+	display: none;
+}
+
+.container:has(.phone:not(:placeholder-shown)) i{
+	display: none;
+}
+
+.container:has(.password:focus) label{
+	font-size: 1.25vw;
+	top: 24vw;
+}
+
+.container:has(.password:not(:placeholder-shown)) label{
+	font-size: 1.25vw;
+	top: 24vw;
+}
+
+.container:has(.password:focus) .require{
+	display: none;
+}
+
+.container:has(.password:not(:placeholder-shown)) .require{
+	display: none;
+}
+
+.container:has(.password:focus) i{
+	display: none;
+}
+
+.container:has(.password:not(:placeholder-shown)) i{
+	display: none;
+}
+
+.container:has(.re-password:focus) label{
+	font-size: 1.25vw;
+	top: 24vw;
+}
+
+.container:has(.re-password:not(:placeholder-shown)) label{
+	font-size: 1.25vw;
+	top: 24vw;
+}
+
+.container:has(.re-password:focus) .require{
+	display: none;
+}
+
+.container:has(.re-password:not(:placeholder-shown)) .require{
+	display: none;
+}
+
+.container:has(.re-password:focus) i{
+	display: none;
+}
+
+.container:has(.re-password:not(:placeholder-shown)) i{
+	display: none;
+}
+
+.container:has(.u_email:focus) label{
+	font-size: 1.25vw;
+	top: 18vw;
+}
+
+.container:has(.u_email:not(:placeholder-shown)) label{
+	font-size: 1.25vw;
+	top: 18vw;
+}
+
+.container:has(.u_email:focus) .require{
+	display: none;
+}
+
+.container:has(.u_email:not(:placeholder-shown)) .require{
+	display: none;
+}
+
+.container:has(.u_email:focus) i{
+	display: none;
+}
+
+.container:has(.u_email:not(:placeholder-shown)) i{
+	display: none;
+}
+
+.container:has(.u_password:focus) label{
+	font-size: 1.25vw;
+	top: 18vw;
+}
+
+.container:has(.u_password:not(:placeholder-shown)) label{
+	font-size: 1.25vw;
+	top: 18vw;
+}
+
+.container:has(.u_password:focus) .require{
+	display: none;
+}
+
+.container:has(.u_password:not(:placeholder-shown)) .require{
+	display: none;
+}
+
+.container:has(.u_password:focus) i{
+	display: none;
+}
+
+.container:has(.u_password:not(:placeholder-shown)) i{
+	display: none;
+}
+
+.require{
+	color: red;
+}
+
+.input_container i{
+	padding-right: 1vw;
+} 
+
+#register .submitBtn, #login .submitBtn{
+	background-color: transparent;
+	color: white;
+	border: 0.25vw solid white;
+	border-radius: 2vw;
+	padding: 0.75vw 1.25vw;
+	font-size: 1vw;
+	width: 10vw;
+    margin-left: auto;
+    margin-right: 12vw;
+}
+
+#register .submitBtn:hover, #login .submitBtn:hover{
+	background-color: yellow;
+	color: red;
+	border: 0.25vw solid yellow;
+}
+
+#login {
+	padding-bottom: 7vw;
+}

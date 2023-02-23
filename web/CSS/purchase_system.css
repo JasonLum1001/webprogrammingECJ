@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+
+.progress_bar_container{
+	padding: 2vw;
+}
+
+.progress_bar{
+	width: 100%;
+	height: 1vw;
+	background-color: yellow;
+	border-radius: 1vw;
+}
+
+.progression{
+	width: 33%;
+	height: 1vw;
+	background-color: red;
+	border-radius: 1vw;
+}
+
+.checkpoint{
+	position: absolute;
+	width: 2vw;
+	height: 2vw;
+	border-radius: 100%;
+	background-color: yellow;
+	z-index: 2;
+	top: 9vw;
+}
+
+.cp1{
+	left: 1.5vw;
+}
+
+.cp2{
+	left: 32.25vw;
+}
+
+.cp3{
+	left: 64.25vw;
+}
+
+.cp4{
+	right: 1.5vw;
+}
+
+.purchase_system{
+	/*background-color: white;*/
+	padding: 0 2vw 2vw;
+	font-size: 1.3vw;
+}
+
+.tab_header{
+	width: 100%;
+	padding: 1.5vw 1vw;
+	margin-top: 0.25vw;
+	text-align: left;
+	background-color: #454545;
+	border: none;
+	border-left: 0.25vw solid white;
+	/*border-radius: 0.25vw;*/
+	font-size: 1.5vw;
+	font-weight: 600;
+	color: white;
+}
+
+.tab_header i{
+	font-weight: 200;
+}
+
+.tab_header:hover{
+	border-left: 0.25vw solid yellow;
+	color: yellow;
+}
+
+.tab_header.active{
+	border-left: 0.25vw solid red;
+	color: red;
+}
+
+.tab_header.active i{
+	transform: rotate(45deg);
+	transition: transform 0.75s;
+}
+
+.panel{
+	background-color: #454545;
+	color: white;
+}
+
+.legend{
+	padding: 1vw;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.legend div{
+	margin: 0.5vw;
+}
+
+.seats{
+	width: 1.5vw;
+	height: 1.5vw;
+}
+
+.preview_{
+	pointer-events: none;
+}
+
+#booked_seat{
+	background-color: red;
+	border: 0.4vw solid #890000;
+	border-bottom: 0.4vw solid red;
+}
+
+#available_seat{
+	background-color: white;
+	border: 0.4vw solid #9A9A9A;
+	border-bottom: 0.4vw solid white;
+}
+
+#selected_seat{
+	background-color: yellow;
+	border: 0.4vw solid #767600;
+	border-bottom: 0.4vw solid yellow;
+}
+
+
+
+.seat_selection table{
+	margin: auto;
+}
+
+.seat_selection .seats{
+	margin: 0.25vw;
+}
+
+.seat_row{
+	padding-right: 3vw;
+}

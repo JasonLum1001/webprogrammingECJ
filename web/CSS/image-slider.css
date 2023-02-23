@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	overflow-x: hidden;
+}
+
+.slider{
+	height: 26vw;
+	white-space: nowrap;
+	transform-style: preserve-3d;
+}
+
+.title{
+	color: white; 
+	font-size: 4vw; 
+	font-family: Brush Script MT, Arial; 
+	padding: 1vw 2vw;
+	margin: 0px; 
+	text-shadow: 0.75vw 0.75vw 10px black;
+}
+
+.slider .controller{
+	position: absolute;
+	color: rgba(179,179,179,0.75);
+	background-color: rgba(0,0,0,0);
+	font-size: 3vw;
+	border-radius: 100%;
+	border: none;
+	padding: 10.5vw 2.5vw;
+	z-index: 5;
+}
+
+.slider .left{
+	float: left;
+	left: 0;
+}
+
+.slider .right{
+	float: right;
+	right:0;
+}
+
+.slider .controller:hover{
+	color: rgba(113,113,113,0.75);
+}
+
+.slider .movies-container{
+	display: inline-block;
+	position: absolute;
+	transition: left 0.5s;
+}
+
+.slider .movie-container{
+	position: relative;
+	float: left;
+	margin: 1vw;
+	width: 15.5vw;
+	height: 23vw;
+}
+
+.slider .movie-container img{
+	position: absolute;
+	width: 15.5vw;
+	height: 23vw;
+	border-radius: 1vw;
+}
+
+.slider .movie_info{
+	display: none;
+	position: absolute;
+	background-color: rgba(17,17,17,0.75);
+	width: 13.5vw;
+	height: 20vw;
+	border-radius: 1vw;
+	z-index: 3;
+	color: white;
+	padding: 1.5vw 1vw;
+	white-space: normal;
+}
+
+.slider .movie_name{
+	font-size: 1.5vw;
+	margin: 1.5vw 0;
+	width: 13.5vw;
+}
+
+.slider .movie_type{
+	font-size: 1.2vw;
+	margin: 0.5vw 0;	
+}
+
+.slider .movie_duration{
+	font-size: 1.2vw;
+	margin: 0.5vw 0;
+}
+
+.slider .movie_language{
+	font-size: 1.2vw;
+	margin: 0.5vw 0;
+}
+
+.movie_subtitle{
+	font-size: 1.2vw;
+	margin: 0.5vw 0;
+}
+
+.slider .info_btn{
+	width: 20%;
+	font-size: 1.5vw;
+	margin: 0.25vw 0.25vw;
+	background-color: rgba(0,0,0,0.00);
+	color: white;
+	border: none;
+}
+
+.slider .info_btn:hover{
+	color: red;
+	cursor: pointer;
+}
+
+.slider .trailer_btn{
+	width: 70%;
+	font-size: 1.2vw;
+	margin: 0.25vw 0.25vw;
+	background-color: rgba(0,0,0,0.00);
+	border: 0.2vw solid red;
+	color: red;
+	font-family: 'Dosis', sans-serif;
+}
+
+.slider .trailer_btn:hover{
+	background-color: red;
+	color: yellow;
+	cursor: pointer;
+}
+
+.slider .buy_btn{
+	width: 100%;
+	font-size: 1.2vw;
+	margin: 0.25vw 0;
+	bottom: 0;
+	border-radius: 1vw;
+	background: linear-gradient(to bottom, #ffe659 0%, #ff6600 100%);
+	color: black;
+	border: none;
+	font-family: 'Dosis', sans-serif;
+}
+
+.slider .buy_btn:hover{
+	background: linear-gradient(to bottom, #FFA200 0%, #FF0000 100%);
+	color: yellow;
+	cursor: pointer;
+}
+
+.slider .movie-container:hover .movie_info{
+	display: block;
+}
