@@ -47,7 +47,8 @@
                 try{
                 connection = DriverManager.getConnection(connectionUrl + database+"? useTimezone=True&serverTimezone=UTC&autoReconnect=true&useSSL=false", userid, password);
                 statement=connection.createStatement();
-                String sql ="SELECT movies.ID, movies.Image, movies.Title, movies_avail.Date, movies_avail.Time, movies_avail.Booked_Seats FROM movies INNER JOIN movies_avail ON movies.Title=movies_avail.Title ORDER BY movies.ID ASC, movies_avail.Date ASC, movies_avail.Time ASC WHERE movies.ID='" + requestID + "'";
+                //String sql = "SELECT DISTINCT movies.ID, movies.Image, movies.Title, movies_avail.Date, movies_avail.Time, movies_avail.Booked_Seats FROM movies INNER JOIN movies_avail ON movies.Title=movies_avail.Title WHERE movies.ID='" + requestID + "' ORDER BY movies.ID ASC, movies_avail.Date ASC, movies_avail.Time ASC;";
+                String sql = "SELECT DISTINCT Image, Title FROM movies WHERE movies.ID='" + requestID + "'";
                 resultSet = statement.executeQuery(sql);
                 while(resultSet.next()){
                 %>  
@@ -58,36 +59,36 @@
 				
 				<form action="" method="get">
 					<div class="image_container">
-						<img src="<%=resultSet.getString("movies.Image")%>" alt="<%=resultSet.getString("movies.Title")%>">
+						<img src="<%=resultSet.getString("Image")%>" alt="<%=resultSet.getString("Title")%>">
 					</div>
 					
 					<div>
-						<input id="movie" value="<%=resultSet.getString("movies.Title")%>" name="movie" readonly>
-							<!-- <button onclick="window.location.href='movie.php'"><i class='fas fa-video'></i>Select Movie</button> -->
-						<br>
-						
-						<dl>
-							<dt><label>Select Location:</label></dt>
-							<dd>
-								<select id="location" name="location">
-									<option value="One Utama">One Utama</option>
-									<option value="Suria KLCC">Suria KLCC</option>
-								</select>
-							</dd>
-							<br>
-							<!-- Use card layout to show date and time or use input type -->
-							<dt><label>Select Date</label></dt>
-							<dd>
-								<input type="date" id="date" name="date" value="2023-02-13">
-							</dd>
-							<br>
-							<dt><label>Select Time</label></dt>
-							<dd>
-								<input type="time" id="time" name="time" value="12:00">
-							</dd>
-						</dl>
-						
-						<input type="Submit" class="submitBtn" value="Proceed to Seat">
+                                            <input id="movie" value="<%=resultSet.getString("Title")%>" name="movie" readonly>
+                                                    <!-- <button onclick="window.location.href='movie.php'"><i class='fas fa-video'></i>Select Movie</button> -->
+                                            <br>
+
+                                            <dl>
+                                                <dt><label>Select Location:</label></dt>
+                                                <dd>
+                                                    <select id="location" name="location">
+                                                        <option value="One Utama">One Utama</option>
+                                                        <option value="Suria KLCC">Suria KLCC</option>
+                                                    </select>
+                                                </dd>
+                                                <br>
+                                                <!-- Use card layout to show date and time or use input type -->
+                                                <dt><label>Select Date</label></dt>
+                                                <dd>
+                                                    <input type="date" id="date" name="date" value="2023-02-13">
+                                                </dd>
+                                                <br>
+                                                <dt><label>Select Time</label></dt>
+                                                <dd>
+                                                    <input type="time" id="time" name="time" value="12:00">
+                                                </dd>
+                                            </dl>
+
+                                            <input type="Submit" class="submitBtn" value="Proceed to Seat">
 					</div>
 				</form>
 				
@@ -410,7 +411,15 @@
 						
 				</div>
 			</details>
+                            
 		</div>
+                <%
+                }
+                connection.close();
+                } catch (Exception e) {
+                e.printStackTrace();
+                }
+                %>
         </div>
         
         <!--Footer-->
