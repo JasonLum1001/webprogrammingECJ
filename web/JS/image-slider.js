@@ -53,8 +53,11 @@ for (var o = 0; o < cont_idx; o++){
 	}
 }
 
-
-function slider(n) {
+var o = 0;
+function slider(n, o) {
+        var slides = slides_container[o].getElementsByClassName("movies-container");
+	var total_slide = slides.length - 1;
+	var index = slide_index - 1;
 	if (total_slide > 4){
 		slide_index = slide_index + n;
 		

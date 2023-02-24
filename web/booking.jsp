@@ -4,6 +4,7 @@
     Author     : Lum Jun Yean
 --%>
 
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,24 @@
         <!--Header-->
 	<jsp:include page='./header.jsp' />
         
+        <%
+        String requestID = request.getParameter("id");
+            
+        String driver = "com.mysql.jdbc.Driver";
+        String connectionUrl = "jdbc:mysql://52.77.241.66/";
+        String database = "ecjcinema";
+        String userid = "root";
+        String password = "ECJCinema123@";
+        try {
+        Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+        }
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        %>
+        
         <!--Body-->
         <div class="body">
             <!-- Progress Bar-->
@@ -23,6 +42,15 @@
 				<div class="progression"></div>
 			</div>
 		</div>
+            
+                <%
+                try{
+                connection = DriverManager.getConnection(connectionUrl + database+"? useTimezone=True&serverTimezone=UTC&autoReconnect=true&useSSL=false", userid, password);
+                statement=connection.createStatement();
+                String sql ="SELECT movies.ID, movies.Image, movies.Title, movies_avail.Date, movies_avail.Time, movies_avail.Booked_Seats FROM movies INNER JOIN movies_avail ON movies.Title=movies_avail.Title ORDER BY movies.ID ASC, movies_avail.Date ASC, movies_avail.Time ASC WHERE movies.ID='" + requestID + "'";
+                resultSet = statement.executeQuery(sql);
+                while(resultSet.next()){
+                %>  
 		
 		<div class="purchase_system">
 			<details id="info_detail" open>
@@ -30,11 +58,11 @@
 				
 				<form action="" method="get">
 					<div class="image_container">
-						<img src="./Images/Movie/movie1.jpg" alt="2067">
+						<img src="<%=resultSet.getString("movies.Image")%>" alt="<%=resultSet.getString("movies.Title")%>">
 					</div>
 					
 					<div>
-						<input id="movie" value="2067" name="movie" readonly>
+						<input id="movie" value="<%=resultSet.getString("movies.Title")%>" name="movie" readonly>
 							<!-- <button onclick="window.location.href='movie.php'"><i class='fas fa-video'></i>Select Movie</button> -->
 						<br>
 						

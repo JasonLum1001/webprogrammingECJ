@@ -127,10 +127,9 @@
 			<h1>Other Movies You Might Also Like</h1>
 			
                         <!--Controller (Left)-->
-			<button class="left controller" onclick="slider(-1)"><i class='fas fa-chevron-circle-left'></i></button>
+			<button class="left controller" onclick="slider(-1, 0)"><i class='fas fa-chevron-circle-left'></i></button>
 			
                         <%
-                        out.print(resultSet.getString("Category"));
                         sql ="SELECT ID, Image, Title, Running_time, Genre, Language, Subtitle, Trailer FROM movies WHERE Category='" + resultSet.getString("Category") + "'";
                         resultSet = statement.executeQuery(sql);
                         while(resultSet.next()){
@@ -190,7 +189,7 @@
                         %>
                         
                         <!--Controller (Right)-->
-			<button class="right controller" onclick="slider(1)"><i class='fas fa-chevron-circle-right'></i></button>
+			<button class="right controller" onclick="slider(1, 0)"><i class='fas fa-chevron-circle-right'></i></button>
 		
 		</div>
             <%

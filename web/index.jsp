@@ -4,6 +4,7 @@
     Author     : Lum Jun Yean
 --%>
 
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -119,95 +120,52 @@
 			<div class="top_ten">
 				<h1>Top 10 Movies</h1>
 				<ol>
+                                    <%
+                                    String driver = "com.mysql.jdbc.Driver";
+                                    String connectionUrl = "jdbc:mysql://52.77.241.66/";
+                                    String database = "ecjcinema";
+                                    String userid = "root";
+                                    String password = "ECJCinema123@";
+                                    try {
+                                    Class.forName(driver);
+                                    } catch (ClassNotFoundException e) {
+                                    e.printStackTrace();
+                                    }
+                                    Connection connection = null;
+                                    Statement statement = null;
+                                    ResultSet resultSet = null;
+                                    %>
+                                    
+                                    <%
+                                    try{
+                                    connection = DriverManager.getConnection(connectionUrl + database+"? useTimezone=True&serverTimezone=UTC&autoReconnect=true&useSSL=false", userid, password);
+                                    statement=connection.createStatement();
+                                    String sql ="SELECT ID, Title FROM movies WHERE Category='Now Showing'";
+                                    resultSet = statement.executeQuery(sql);
+                                    int num = 0;
+                                    while(resultSet.next()){
+                                    %>
 					<li>
-						<span>A Guilty Conscience</span>
-						<a href="./booking.jsp" target="_blank">
+                                            <span><%=resultSet.getString("Title")%></span>
+						<a href="./booking.jsp?id=<%=resultSet.getString("ID")%>" target="_blank">
 							<button>Book Now</button>
 						</a>
 					</li>
 					
 					<hr>
+                                        
+                                    <%
+                                        if (num == 10){
+                                            break;
+                                        }
+                                        num = num + 1;
+                                    }
+                                    connection.close();
+                                    } catch (Exception e) {
+                                    e.printStackTrace();
+                                    }
+                                    %>
 					
-					<li>
-						<span>Coast Guard Malaysia: Ops Helang</span>
-						<a href="./booking.jsp" target="_blank">
-							<button>Book Now</button>
-						</a>
-					</li>
-					
-					<hr>
-					
-					<li>
-						<span>3D Titanic</span>
-						<a href="./booking.jsp" target="_blank">
-							<button>Book Now</button>
-						</a>
-					</li>
-					
-					<hr>
-					
-					<li>
-						<span>Harum Malam</span>
-						<a href="./booking.jsp" target="_blank">
-							<button>Book Now</button>
-						</a>
-					</li>
-					
-					<hr>
-					
-					<li>
-						<span>The King of Musang King</span>
-						<a href="./booking.jsp" target="_blank">
-							<button>Book Now</button>
-						</a>
-					</li>
-					
-					<hr>
-					
-					<li>
-						<span>Someday Or One Day</span>
-						<a href="./booking.jsp" target="_blank">
-							<button>Book Now</button>
-						</a>
-					</li>
-					
-					<hr>
-					
-					<li>
-						<span>Ma, I Love You</span>
-						<a href="./booking.jsp" target="_blank">
-							<button>Book Now</button>
-						</a>
-					</li>
-					
-					<hr>
-					
-					<li>
-						<span>The Wandering Earth 2</span>
-						<a href="./booking.jsp" target="_blank">
-							<button>Book Now</button>
-						</a>
-					</li>
-					
-					<hr>
-					
-					<li>
-						<span>Avatar: The Way Of Water</span>
-						<a href="./booking.jsp" target="_blank">
-							<button>Book Now</button>
-						</a>
-					</li>
-					
-					<hr>
-					
-					<li>
-						<span>Pathaan</span>
-						<a href="./booking.jsp" target="_blank">
-							<button>Book Now</button>
-						</a>
-					</li>
-					
-					<hr>
 				</ol>
 			</div>
 		</div>
@@ -223,267 +181,206 @@
 				<label class="movie_tab_label label3" for="Coming_Soon">Coming Soon</label>
 				
 				<!--Now Showing-->
-				<div id="Now_Showing_content" class="tab movie_1">
-					<div class="movies-container">
+				<div id="Now_Showing_content" class="tab movie_1 slider">
+                                        <!--Controller (Left)-->
+                                        <button class="left controller" onclick="slider(-1, 0)"><i class='fas fa-chevron-circle-left'></i></button>
+					<%
+                                        connection = DriverManager.getConnection(connectionUrl + database+"? useTimezone=True&serverTimezone=UTC&autoReconnect=true&useSSL=false", userid, password);
+                                        statement=connection.createStatement();
+                                        String sql ="SELECT ID, Image, Title, Running_time, Genre, Language, Subtitle, Trailer FROM movies WHERE Category='Now Showing'";
+                                        resultSet = statement.executeQuery(sql);
+                                        while(resultSet.next()){
+                                        %>
 
-						<div class="movie-container">
-							<img src="./Images/Movie/movie1.jpg" alt="2067">
-							<div class="movie_info">
-								<p class="movie_name"><strong>2067</strong></p>
-								<p class="movie_type"><i class='fas fa-tag'></i>&nbsp;Action</p>
-								<p class="movie_duration"><i class="fa fa-clock"></i>&nbsp;3 hour</p>
-								<p class="movie_language"><i class='fas fa-comment-dots'></i>&nbsp;ENG</p>
-								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
+                                        <div class="movies-container">
+                                                <div class="movie-container">
+                                                        <img src="<%=resultSet.getString("Image")%>" alt="<%=resultSet.getString("Title")%>">
+                                                        <div class="movie_info">
+                                                                <p class="movie_name"><strong><%=resultSet.getString("Title")%></strong></p>
+                                                                <%
+                                                                if (resultSet.getString("Genre") != null && !resultSet.getString("Genre").equals("N/A")){
+                                                                    out.print("<p class='movie_type'><i class='fas fa-tag'></i>&nbsp;" + resultSet.getString("Genre") + "</p>");
+                                                                }
 
-								<br>
+                                                                if (resultSet.getString("Running_time") != null && !resultSet.getString("Running_time").equals("N/A")){
+                                                                    out.print("<p class='movie_duration'><i class='fa fa-clock'></i>&nbsp;" + resultSet.getString("Running_time") + "</p>");
+                                                                }
 
-								<a href="./movie_info.jsp" target="_blank">
-								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
-								</a>
+                                                                if (resultSet.getString("Language") != null && !resultSet.getString("Language").equals("N/A")){
+                                                                    out.print("<p class='movie_language'><i class='fas fa-comment-dots'></i>&nbsp;" + resultSet.getString("Language") + "</p>");
+                                                                }
 
-								<a href="https://www.youtube.com/embed/JORN2hkXLyM" target="_blank">
-									<button class="trailer_btn" onclick="openTrailer()"><b>Trailer</b></button>
-								</a>
+                                                                if (resultSet.getString("Subtitle") != null && !resultSet.getString("Subtitle").equals("N/A")){
+                                                                    out.print("<p class='movie_subtitle'><i class='fas fa-closed-captioning'></i>&nbsp;" + resultSet.getString("Subtitle") + "</p>");
+                                                                }
 
-								<br>
+                                                                %>
 
-								<a href="./booking.jsp" target="_blank">
-									<button class="buy_btn"><b>Buy Ticket Now</b></button>
-								</a>
+                                                                <br>
 
-							</div>
-						</div>
+                                                                <a href="./movie_info.jsp?id=<%=resultSet.getInt("ID")%>" target="_blank">
+                                                                <button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
+                                                                </a>
 
-						<div class="movie-container">
-							<img src="./Images/Movie/movie2.jpg" alt="2067">
-							<div class="movie_info">
-								<p class="movie_name"><strong>Happy Halloween Scooby Doo!</strong></p>
-								<p class="movie_type"><i class='fas fa-tag'></i>&nbsp;Action</p>
-								<p class="movie_duration"><i class="fa fa-clock"></i>&nbsp;3 hour</p>
-								<p class="movie_language"><i class='fas fa-comment-dots'></i>&nbsp;ENG</p>
-								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
-								<br>
+                                                                <%
+                                                                if (resultSet.getString("Trailer") != null && !resultSet.getString("Subtitle").equals("N/A")){
+                                                                    out.print("<a href='" + resultSet.getString("Trailer") + "' target='_blank'><button class='trailer_btn'><b>Trailer</b></button></a>");
+                                                                }
+                                                                else{
+                                                                    out.print("<button class='trailer_btn' disabled><b>No Trailer</b></button>");
+                                                                }
+                                                                %>
 
-								<a href="./movie_info.jsp" target="_blank">
-								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
-								</a>
+                                                                <br>
 
-								<a href="https://www.youtube.com/embed/JORN2hkXLyM" target="_blank">
-									<button class="trailer_btn" onclick="openTrailer()"><b>Trailer</b></button>
-								</a>
+                                                                <a href="./booking.jsp?id=<%=resultSet.getInt("ID")%>" target="_blank">
+                                                                        <button class="buy_btn"><b>Buy Ticket Now</b></button>
+                                                                </a>
 
-								<br>
+                                                        </div>
+                                                </div>
+                                        </div>
 
-								<a href="./booking.jsp" target="_blank">
-									<button class="buy_btn"><b>Buy Ticket Now</b></button>
-								</a>
-
-							</div>
-						</div>
-
-						<div class="movie-container">
-							<img src="./Images/Movie/movie3.jpg" alt="2067">
-							<div class="movie_info">
-								<p class="movie_name"><strong>Dating Amber</strong></p>
-								<p class="movie_type"><i class='fas fa-tag'></i>&nbsp;Action</p>
-								<p class="movie_duration"><i class="fa fa-clock"></i>&nbsp;3 hour</p>
-								<p class="movie_language"><i class='fas fa-comment-dots'></i>&nbsp;ENG</p>
-								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
-								<br>
-
-								<a href="./movie_info.jsp" target="_blank">
-								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
-								</a>
-
-								<a href="https://www.youtube.com/embed/JORN2hkXLyM" target="_blank">
-									<button class="trailer_btn" onclick="openTrailer()"><b>Trailer</b></button>
-								</a>
-
-								<br>
-
-								<a href="./booking.jsp" target="_blank">
-									<button class="buy_btn"><b>Buy Ticket Now</b></button>
-								</a>
-
-							</div>
-						</div>
-					</div>
+                                        <%
+                                        }
+                                        %>
+                                        
+                                        <!--Controller (Right)-->
+                                        <button class="right controller" onclick="slider(1, 0)"><i class='fas fa-chevron-circle-right'></i></button>
 				</div>
 
 				<!--Advance Sales-->
-				<div id="Advance_Sales_content" class="tab movie_2">
-					<div class="movies-container">
+				<div id="Advance_Sales_content" class="tab movie_2 slider">
+                                        <!--Controller (Left)-->
+                                        <button class="left controller" onclick="slider(-1, 1)"><i class='fas fa-chevron-circle-left'></i></button>
+					<%
+                                        sql ="SELECT ID, Image, Title, Running_time, Genre, Language, Subtitle, Trailer FROM movies WHERE Category='Advance Sales'";
+                                        resultSet = statement.executeQuery(sql);
+                                        while(resultSet.next()){
+                                        %>
 
-						<div class="movie-container">
-							<img src="./Images/Movie/movie2.jpg" alt="2067">
-							<div class="movie_info">
-								<p class="movie_name"><strong>2067</strong></p>
-								<p class="movie_type"><i class='fas fa-tag'></i>&nbsp;Action</p>
-								<p class="movie_duration"><i class="fa fa-clock"></i>&nbsp;3 hour</p>
-								<p class="movie_language"><i class='fas fa-comment-dots'></i>&nbsp;ENG</p>
-								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
+                                        <div class="movies-container">
+                                                <div class="movie-container">
+                                                        <img src="<%=resultSet.getString("Image")%>" alt="<%=resultSet.getString("Title")%>">
+                                                        <div class="movie_info">
+                                                                <p class="movie_name"><strong><%=resultSet.getString("Title")%></strong></p>
+                                                                <%
+                                                                if (resultSet.getString("Genre") != null && !resultSet.getString("Genre").equals("N/A")){
+                                                                    out.print("<p class='movie_type'><i class='fas fa-tag'></i>&nbsp;" + resultSet.getString("Genre") + "</p>");
+                                                                }
 
-								<br>
+                                                                if (resultSet.getString("Running_time") != null && !resultSet.getString("Running_time").equals("N/A")){
+                                                                    out.print("<p class='movie_duration'><i class='fa fa-clock'></i>&nbsp;" + resultSet.getString("Running_time") + "</p>");
+                                                                }
 
-								<a href="./movie_info.jsp" target="_blank">
-								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
-								</a>
+                                                                if (resultSet.getString("Language") != null && !resultSet.getString("Language").equals("N/A")){
+                                                                    out.print("<p class='movie_language'><i class='fas fa-comment-dots'></i>&nbsp;" + resultSet.getString("Language") + "</p>");
+                                                                }
 
-								<a href="https://www.youtube.com/embed/JORN2hkXLyM" target="_blank">
-									<button class="trailer_btn" onclick="openTrailer()"><b>Trailer</b></button>
-								</a>
+                                                                if (resultSet.getString("Subtitle") != null && !resultSet.getString("Subtitle").equals("N/A")){
+                                                                    out.print("<p class='movie_subtitle'><i class='fas fa-closed-captioning'></i>&nbsp;" + resultSet.getString("Subtitle") + "</p>");
+                                                                }
 
-								<br>
+                                                                %>
 
-								<a href="./booking.jsp" target="_blank">
-									<button class="buy_btn"><b>Buy Ticket Now</b></button>
-								</a>
+                                                                <br>
 
-							</div>
-						</div>
+                                                                <a href="./movie_info.jsp?id=<%=resultSet.getInt("ID")%>" target="_blank">
+                                                                <button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
+                                                                </a>
 
-						<div class="movie-container">
-							<img src="./Images/Movie/movie3.jpg" alt="2067">
-							<div class="movie_info">
-								<p class="movie_name"><strong>Happy Halloween Scooby Doo!</strong></p>
-								<p class="movie_type"><i class='fas fa-tag'></i>&nbsp;Action</p>
-								<p class="movie_duration"><i class="fa fa-clock"></i>&nbsp;3 hour</p>
-								<p class="movie_language"><i class='fas fa-comment-dots'></i>&nbsp;ENG</p>
-								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
-								<br>
+                                                                <%
+                                                                if (resultSet.getString("Trailer") != null && !resultSet.getString("Subtitle").equals("N/A")){
+                                                                    out.print("<a href='" + resultSet.getString("Trailer") + "' target='_blank'><button class='trailer_btn'><b>Trailer</b></button></a>");
+                                                                }
+                                                                else{
+                                                                    out.print("<button class='trailer_btn' disabled><b>No Trailer</b></button>");
+                                                                }
+                                                                %>
 
-								<a href="./movie_info.jsp" target="_blank">
-								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
-								</a>
+                                                                <br>
 
-								<a href="https://www.youtube.com/embed/JORN2hkXLyM" target="_blank">
-									<button class="trailer_btn" onclick="openTrailer()"><b>Trailer</b></button>
-								</a>
+                                                                <a href="./booking.jsp?id=<%=resultSet.getInt("ID")%>" target="_blank">
+                                                                        <button class="buy_btn"><b>Buy Ticket Now</b></button>
+                                                                </a>
 
-								<br>
+                                                        </div>
+                                                </div>
+                                        </div>
 
-								<a href="./booking.jsp" target="_blank">
-									<button class="buy_btn"><b>Buy Ticket Now</b></button>
-								</a>
-
-							</div>
-						</div>
-
-						<div class="movie-container">
-							<img src="./Images/Movie/movie1.jpg" alt="2067">
-							<div class="movie_info">
-								<p class="movie_name"><strong>Dating Amber</strong></p>
-								<p class="movie_type"><i class='fas fa-tag'></i>&nbsp;Action</p>
-								<p class="movie_duration"><i class="fa fa-clock"></i>&nbsp;3 hour</p>
-								<p class="movie_language"><i class='fas fa-comment-dots'></i>&nbsp;ENG</p>
-								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
-								<br>
-
-								<a href="./movie_info.jsp" target="_blank">
-								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
-								</a>
-
-								<a href="https://www.youtube.com/embed/JORN2hkXLyM" target="_blank">
-									<button class="trailer_btn" onclick="openTrailer()"><b>Trailer</b></button>
-								</a>
-
-								<br>
-
-								<a href="./booking.jsp" target="_blank">
-									<button class="buy_btn"><b>Buy Ticket Now</b></button>
-								</a>
-
-							</div>
-						</div>
-					</div>
+                                        <%
+                                        }
+                                        %>
+                                        
+                                        <!--Controller (Right)-->
+                                        <button class="right controller" onclick="slider(1, 1)"><i class='fas fa-chevron-circle-right'></i></button>
 				</div>
 
 				<!--Coming Soon-->
-				<div id="Coming_Soon_content" class="tab movie_3">
-					<div class="movies-container">
+				<div id="Coming_Soon_content" class="tab movie_3 slider">
+                                        <!--Controller (Left)-->
+                                        <button class="left controller" onclick="slider(-1, 2)"><i class='fas fa-chevron-circle-left'></i></button>
+					<%
+                                        sql ="SELECT ID, Image, Title, Running_time, Genre, Language, Subtitle, Trailer FROM movies WHERE Category='Coming Soon'";
+                                        resultSet = statement.executeQuery(sql);
+                                        while(resultSet.next()){
+                                        %>
 
-						<div class="movie-container">
-							<img src="./Images/Movie/movie3.jpg" alt="2067">
-							<div class="movie_info">
-								<p class="movie_name"><strong>2067</strong></p>
-								<p class="movie_type"><i class='fas fa-tag'></i>&nbsp;Action</p>
-								<p class="movie_duration"><i class="fa fa-clock"></i>&nbsp;3 hour</p>
-								<p class="movie_language"><i class='fas fa-comment-dots'></i>&nbsp;ENG</p>
-								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
+                                        <div class="movies-container">
+                                                <div class="movie-container">
+                                                        <img src="<%=resultSet.getString("Image")%>" alt="<%=resultSet.getString("Title")%>">
+                                                        <div class="movie_info">
+                                                                <p class="movie_name"><strong><%=resultSet.getString("Title")%></strong></p>
+                                                                <%
+                                                                if (resultSet.getString("Genre") != null && !resultSet.getString("Genre").equals("N/A")){
+                                                                    out.print("<p class='movie_type'><i class='fas fa-tag'></i>&nbsp;" + resultSet.getString("Genre") + "</p>");
+                                                                }
 
-								<br>
+                                                                if (resultSet.getString("Running_time") != null && !resultSet.getString("Running_time").equals("N/A")){
+                                                                    out.print("<p class='movie_duration'><i class='fa fa-clock'></i>&nbsp;" + resultSet.getString("Running_time") + "</p>");
+                                                                }
 
-								<a href="./movie_info.jsp" target="_blank">
-								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
-								</a>
+                                                                if (resultSet.getString("Language") != null && !resultSet.getString("Language").equals("N/A")){
+                                                                    out.print("<p class='movie_language'><i class='fas fa-comment-dots'></i>&nbsp;" + resultSet.getString("Language") + "</p>");
+                                                                }
 
-								<a href="https://www.youtube.com/embed/JORN2hkXLyM" target="_blank">
-									<button class="trailer_btn" onclick="openTrailer()"><b>Trailer</b></button>
-								</a>
+                                                                if (resultSet.getString("Subtitle") != null && !resultSet.getString("Subtitle").equals("N/A")){
+                                                                    out.print("<p class='movie_subtitle'><i class='fas fa-closed-captioning'></i>&nbsp;" + resultSet.getString("Subtitle") + "</p>");
+                                                                }
 
-								<br>
+                                                                %>
 
-								<a href="./booking.jsp" target="_blank">
-									<button class="buy_btn"><b>Buy Ticket Now</b></button>
-								</a>
+                                                                <br>
 
-							</div>
-						</div>
+                                                                <a href="./movie_info.jsp?id=<%=resultSet.getInt("ID")%>" target="_blank">
+                                                                <button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
+                                                                </a>
 
-						<div class="movie-container">
-							<img src="./Images/Movie/movie1.jpg" alt="2067">
-							<div class="movie_info">
-								<p class="movie_name"><strong>Happy Halloween Scooby Doo!</strong></p>
-								<p class="movie_type"><i class='fas fa-tag'></i>&nbsp;Action</p>
-								<p class="movie_duration"><i class="fa fa-clock"></i>&nbsp;3 hour</p>
-								<p class="movie_language"><i class='fas fa-comment-dots'></i>&nbsp;ENG</p>
-								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
-								<br>
+                                                                <%
+                                                                if (resultSet.getString("Trailer") != null && !resultSet.getString("Subtitle").equals("N/A")){
+                                                                    out.print("<a href='" + resultSet.getString("Trailer") + "' target='_blank'><button class='trailer_btn'><b>Trailer</b></button></a>");
+                                                                }
+                                                                else{
+                                                                    out.print("<button class='trailer_btn' disabled><b>No Trailer</b></button>");
+                                                                }
+                                                                %>
 
-								<a href="./movie_info.jsp" target="_blank">
-								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
-								</a>
+                                                                <br>
 
-								<a href="https://www.youtube.com/embed/JORN2hkXLyM" target="_blank">
-									<button class="trailer_btn"><b>Trailer</b></button>
-								</a>
+                                                                <a href="./booking.jsp?id=<%=resultSet.getInt("ID")%>" target="_blank">
+                                                                        <button class="buy_btn"><b>Buy Ticket Now</b></button>
+                                                                </a>
 
-								<br>
+                                                        </div>
+                                                </div>
+                                        </div>
 
-								<a href="./booking.jsp" target="_blank">
-									<button class="buy_btn"><b>Buy Ticket Now</b></button>
-								</a>
-
-							</div>
-						</div>
-
-						<div class="movie-container">
-							<img src="./Images/Movie/movie2.jpg" alt="2067">
-							<div class="movie_info">
-								<p class="movie_name"><strong>Dating Amber</strong></p>
-								<p class="movie_type"><i class='fas fa-tag'></i>&nbsp;Action</p>
-								<p class="movie_duration"><i class="fa fa-clock"></i>&nbsp;3 hour</p>
-								<p class="movie_language"><i class='fas fa-comment-dots'></i>&nbsp;ENG</p>
-								<p class="movie_subtitle"><i class='fas fa-closed-captioning'></i>&nbsp;BM</p>
-								<br>
-
-								<a href="./movie_info.jsp" target="_blank">
-								<button class="info_btn"><b><i class="fa fa-info-circle"></i></b></button>
-								</a>
-
-								<a href="https://www.youtube.com/embed/JORN2hkXLyM" target="_blank">
-									<button class="trailer_btn" onclick="openTrailer()"><b>Trailer</b></button>
-								</a>
-
-								<br>
-
-								<a href="./booking.jsp" target="_blank">
-									<button class="buy_btn"><b>Buy Ticket Now</b></button>
-								</a>
-
-							</div>
-						</div>
-					</div>
+                                        <%
+                                        }
+                                        %>
+                                        
+                                        <!--Controller (Right)-->
+                                        <button class="right controller" onclick="slider(1, 2)"><i class='fas fa-chevron-circle-right'></i></button>
 				</div>
 				
 			</div>
@@ -494,5 +391,7 @@
         
         <!--Footer-->
         <jsp:include page='./footer.jsp' />
+        
+        <script src="./JS/image-slider.js"></script>
     </body>
 </html>
